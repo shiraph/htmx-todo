@@ -1,0 +1,23 @@
+{
+  "name": "htmx",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "tailwind": "bun tailwindcss -i ./src/index.css -o public/index.css --watch",
+    "dev": "bun --hot index.tsx"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/bun": "latest",
+    "tailwindcss": "^3.4.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/html": "^0.8.0",
+    "@elysiajs/static": "^0.8.1",
+    "elysia": "^0.8.17",
+    "htmx.org": "^1.9.10"
+  }
+}
