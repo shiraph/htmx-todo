@@ -8,6 +8,7 @@ export default ({ children }: any) => (
       <title>HTMX</title>
       <link rel="stylesheet" href="/public/index.css" />
       <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+      <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
     </head>
     <body>
     <main class="py-12">{children}</main>

@@ -3,8 +3,7 @@ import Layout from "../layout/Layout.tsx";
 export default () => (
   <Layout>
     <div class="w-full max-w-screen-md m-auto">
-      <form class="bg-white px-8 pt-6 pb-8 mb-4" hx-post="/todos"
-            hx-target="#todos" hx-swap="innerHTML">
+      <form class="py-8 mb-4" hx-post="/todos" hx-target="#todos" hx-swap="innerHTML">
         <div class="mb-4">
           <div
             class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full">

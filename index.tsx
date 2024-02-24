@@ -1,8 +1,9 @@
 import { Elysia } from "elysia"
 import { html } from "@elysiajs/html"
 import { staticPlugin } from '@elysiajs/static'
-import Home from "./src/page/Home.tsx";
 import type { Todo } from "./src/model/todo.ts";
+import Home from "./src/page/Home.tsx";
+import TodoList from "./src/component/TodoList.tsx";
 
 const app = new Elysia()
 app.use(html())
@@ -17,7 +18,7 @@ let todos: Todo[] = [
 
 app.get("/", () => <Home />)
 app.get("/todos", (request: Request) => {
-  return todos
+  return <TodoList todos={todos} />
 })
 app.post("/todos", (request: Request) => {
   if (!request.body) {
@@ -31,7 +32,16 @@ app.post("/todos", (request: Request) => {
     name: request.body.todo as string,
   }
   todos.push(todo)
-  return todos
+  return <TodoList todos={todos} />
+})
+
+app.delete("/delete/:id", ({params}) => {
+  const id = params.id
+  if (!id || isNaN(parseInt(id))) {
+    return { error: "No id" }
+  }
+  todos = todos.filter((todo) => todo.id !== parseInt(id))
+  return <TodoList todos={todos} />
 })
 
 app.listen(8080, () => {
