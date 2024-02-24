@@ -6,12 +6,13 @@ To install dependencies:
 bun install
 ```
 
-## todo
+## todo app
 
 To run:
 
 ```bash
-bun run index.ts
+bun tailwind
+bun dev
 ```
 
 ## client-side-templates
